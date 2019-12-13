@@ -1,0 +1,16 @@
+$TTL 86400
+@ IN SOA theproguy.tk. root.theproguy.tk. (
+    2019061800 ;Serial
+    3600 ;Refresh
+    1800 ;Retry
+    604800 ;Expire
+    86400 ;Minimum TTL
+)
+
+;Name Server Information
+@ IN NS theproguy.tk.
+;IP for Name Server
+@ IN PTR theproguy.tk.
+
+77 IN PTR theproguy.tk.
+
