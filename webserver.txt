@@ -1,0 +1,32 @@
+yum install bind bind-utils
+cp /etc/named.cong(,-bkp}
+vi named.conf
+cd /varnamed
+vi forward.theproguy
+vi reverse.theproguy
+named-checkconf -z /etc/named.conf
+named-checkzone forward /var/named/forward.theproguy
+named-checkzone reverse /var/named/reverse.theproguy
+yum install httpd
+yum install vsftpd
+cp /etc/vsftpd/vsftpd.conf {.-bkp}
+vi /etc/vsftpd/vsftpd.conf
+systemctl start  httpd; systemctl start vsftpd
+useradd -m -c "vijay" -s /bin/bash vijay
+passwd vijay
+echo "vijay" |tee -a /etc/vsftpd.userlist
+
+
+#####
+install ssl certificate
+
+yum install mod_ssl -y
+curl -O https://dl.eff.org/certbot-auto
+mv certbot-auto /usr/local/bin
+ORORORORORORO
+
+git clone https://github.com/letsencrypt/letsencrypt
+
+cd letsencrypt
+
+./letsencrypt-auto --apache
